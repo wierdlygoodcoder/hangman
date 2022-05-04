@@ -1,6 +1,6 @@
 
 # The secret word the player is trying to guess
-secertword = "code"
+secertWord = "code"
 lettersGuessed = ""
 
 # The number of turns before the player loses
@@ -13,7 +13,7 @@ while losecount > 0:
     # get the players guessed letters
     guess = input("Enter a letter: ")
 
-    if guess in secertword:
+    if guess in secertWord:
         # player guessed correctly
         print(f"Correct! there is {guess} more letters in the secret word.")
     else:
@@ -23,3 +23,11 @@ while losecount > 0:
     # makes a list of all letters guessed
     lettersGuessed = lettersGuessed + guess
     wrongLetterCount = 0
+
+    for letter in secertWord:
+        if letter in lettersGuessed:
+            print(f"{letter}", end="")
+        else:
+            print("_", end="")
+            wrongLetterCount += 1
+
