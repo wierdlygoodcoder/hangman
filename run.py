@@ -1,3 +1,13 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+
+#The secret word the player is trying to guess
+secertword = "code"
+lettersGuessed = ""
+
+#The number of turns before the player loses
+losecount = 5
+
+#loop until the player has made too many faild tries
+#will breack loop if they succeed instead
+while losecount > 0;
+
+    
