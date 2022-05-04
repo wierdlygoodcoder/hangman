@@ -31,3 +31,8 @@ while losecount > 0:
             print("_", end="")
             wrongLetterCount += 1
 
+    # if there are not lossed letters then the player won
+    if wrongLetterCount == 0:
+        print(f"Well Done! the secret word was:{secertWord}. You Win")
+        break
+
