@@ -11,7 +11,7 @@ while losecount > 0:
 
     # get the players guessed letters
     guess = input("Enter A letter: ")
-    allowedCharacters='abcdefghijklmnopqrstuvwxyz'
+    allowedCharacters = 'abcdefghijklmnopqrstuvwxyz'
     while(len(guess) != 1 or guess not in allowedCharacters):
         guess = input("Thats not a letter, Enter A Letter: ")
 
@@ -20,7 +20,13 @@ while losecount > 0:
         print(f"Correct! there is {guess} more letters in the secret word.")
     else:
         losecount -= 1
-        print(f"incorrect. there are no {guess} in the secert word. You have {losecount} tries left.")
+        print(lettersGuessed)
+        print(
+            f"incorrect. there are no {guess} in the secert word, "
+            f"You have {losecount} tries left."
+            )
+    if guess in lettersGuessed:
+        print("You have already guessed this letter, please try again.")
 
     # makes a list of all letters guessed
     lettersGuessed = lettersGuessed + guess
@@ -37,8 +43,10 @@ while losecount > 0:
     if wrongLetterCount == 0:
         print(f" Well Done! the secret word was: {secertWord}. You Win")
         break
+
+
 else:
-    print(f"Sorry, you failed and did not win. the word was {secertWord} Try Again")
-
-
-
+    print(
+        "Sorry, you failed and did not win."
+        f"The word was {secertWord} Try Again"
+        )
