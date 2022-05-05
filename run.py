@@ -1,5 +1,5 @@
 # The secret word the player is trying to guess
-secertWord = "code"
+secertWord = "arcade"
 lettersGuessed = ""
 
 # The number of turns before the player loses
@@ -28,9 +28,9 @@ while losecount > 0:
 
     for letter in secertWord:
         if letter in lettersGuessed:
-            print(f"{letter}", end="")
+            print(f" {letter} ", end="")
         else:
-            print("_", end="")
+            print(" _ ", end="")
             wrongLetterCount += 1
     print("")
     # if there are not lossed letters then the player won
@@ -39,3 +39,6 @@ while losecount > 0:
         break
 else:
     print(f"Sorry, you failed and did not win. the word was {secertWord} Try Again")
+
+
+
