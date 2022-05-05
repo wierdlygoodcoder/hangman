@@ -10,7 +10,7 @@ losecount = 5
 while losecount > 0:
 
     # get the players guessed letters
-    guess = input("Enter a letter: ")
+    guess = input("Enter A letter: ")
     allowedCharacters='abcdefghijklmnopqrstuvwxyz'
     while(len(guess) != 1 or guess not in allowedCharacters):
         guess = input("Thats not a letter, Enter A Letter: ")
