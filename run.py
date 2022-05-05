@@ -26,21 +26,20 @@ difficulty = {
 }
 
 # The secret word the player is trying to guess
-secert_word = difficulty.values()
 letters_guessed = ""
-
-
 # The number of turns before the player loses
 lose_count = 5
 
 # loop until the player has made too many faild tries
 # will breack loop if they succeed instead
+choose_difficulty = input("choose you difficulty Easy Normal or Hard!!")
+if choose_difficulty == "easy":
+    num = random.choice(list(easy.values()))
+    print(choose_difficulty, num)
+
 while lose_count > 0:
 
-    choose_difficulty = input("choose you difficulty Easy Normal or Hard!!")
-    if choose_difficulty == "easy":
-        num = random.choice(list(easy.values()))
-        print(choose_difficulty, num)
+    secert_word = num
 
     # get the players guessed letters
     guess = input("Enter A letter: ")
