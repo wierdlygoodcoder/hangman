@@ -33,13 +33,19 @@ lose_count = 5
 # loop until the player has made too many faild tries
 # will breack loop if they succeed instead
 choose_difficulty = input("choose you difficulty Easy Normal or Hard!!")
-if choose_difficulty == "easy":
-    num = random.choice(list(easy.values()))
-    print(choose_difficulty, num)
+if choose_difficulty == "easy" or "normal" or "hard":
+    easy_word = random.choice(list(easy.values()))
+    normal_word = random.choice(list(normal.values()))
+    hard_word = random.choice(list(hard.values()))
+    print(choose_difficulty, easy_word, normal_word, hard_word)
 
 while lose_count > 0:
-
-    secert_word = num
+    if choose_difficulty == "normal":
+        secert_word = normal_word
+    elif choose_difficulty == "easy":
+        secert_word = easy_word
+    else:
+        secert_word = hard_word
 
     # get the players guessed letters
     guess = input("Enter A letter: ")
