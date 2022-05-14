@@ -1,7 +1,7 @@
 # HANGMAN The Word Guessing Game 
 The hangman game is a python terminal game that is running the code institute mock terminal on Heroku.
 
-This game allows users to guess words from a dictionary of a preset word for 3 difficulties easy, normal and hard. The game also
+This game allows users to guess words from a dictionary of a preset word for 3 difficulties easy, normal, and hard. The game also
 has lived and you can try to play up to 6 times before the game will say that you fail. 
 
 
@@ -13,7 +13,7 @@ The rules for hangman are simple you can only use letters and nothing else and o
 
 This game also has the extra rule that all letters must be the lower case when guessed and the game will turn the first letter in the word into a capital.
 
-The way this game plays it will tell you how many tries you have and how many letters you have to guess. 
+The way this game plays will tell you how many tries you have and how many letters you have to guess. 
 
 You win by guessing the word that the computer has chosen for you in that game.
 
@@ -48,30 +48,62 @@ You win by guessing the word that the computer has chosen for you in that game.
 
 - When the player guesses wrong the game will give them 6 tries
   - After the 6th try the game will say that you lost
-  - The game tbeinga hen tell the player what the word was. 
+  - The game then tells the player what the word was. 
 
 ![Screenshot 2022-05-14 031409](https://user-images.githubusercontent.com/95313496/168407080-fbba0c97-08f8-41f4-9f75-7b94a42eff22.jpg)
 
 
-### future features
+### Future Features
 
-## data model
+- To have a visual hangman when the player goes through their lives.
+- Allow players to add words to the category.
+- Have topes within the difficulties.
 
-## testing
+## Data Model
 
-## bugs
+I have used functions to make this game by naming them so they can interact with each other. 
 
-#### solved bugs
-serect number arugements was in the wrongorder to be called by the funtion so it gave them a number inbstead of a word 
+I used the **choose function**to allow the user to have the choice and then that passes the user's answers through. from there the choice the user made gives that choice 
+a variable of secret_word.
 
-was runnuing 1 .5 was ending after guess so linked the last two functions
+From there the next function gives the user the ability to interact with the game allowing them to put in a letter. it also validates the user's choice and then if they use the alphabet the choice they make is passed on to the to see if it's in the secret word if it is the guess was correct if not then they get that answer. the function returns the next function until the player has completed the loop.;
 
-lose count called in globally  and was being called before it was beening reduced 
-print display needed aN EMPTY print statement to print on new line
-#### remaining bugs
-#### validator testing
+The next function checks to see if the player has won or lost and if they have not then they return to the previous function.
 
-## deployment
+## Testing
+- passed the code through a pep8 tester there were no issues
+- invalid inputs do not work and ask for the user to put in a letter
+- tested my code in the code institute Heroku terminal
 
-## credits
+## Bugs
+
+### Solved bugs
+- Corrected an issue that the serect_number arguments were in the wrong order to be called by the function so it gave them a number instead of a word 
+- the game was only running 1 .5 was ending after guess so linked the last two functions and it now repeats until the correct answer or wrong answer is given.
+- lose count called in globally as was not being called. 
+- loss count was not reduced before it was being printed 
+
+
+### Remaining bugs
+- I would like to reset the tries after the program restarts as it continues with the number of tries you had from the previous game.
+
+### Validator testing
+The application was put through pep 8 online check. 
+
+![Screenshot 2022-05-14 035856](https://user-images.githubusercontent.com/95313496/168408324-23092d87-e343-4512-9c69-53566bd110f6.jpg)
+
+## Deployment
+
+To deploy this project I had to use Heroku to deploy. this was difficult to understand to start off but by the end I understand it. the steps I took to deploy the project were:
+
+1. used the console to log on to Heroku using the command: 'Heroku login -i'.
+2. still in the console I had to choose the correct Heroku app using the following command: 'Heroku apps'.
+3. after that I used the following command to select that app so that I could commit to it: Heroku git: 'remote -a hangmans'.
+4. this is where I put the commit message to both git and heruko:'git add. && git commit -m "_input message here_"'.
+5. here is where I push to both git and Heroku: 'git push origin main', 'git push Heroku main'.
+
+## Credits
+- Code institute for the deployment terminal 
+- My mentor 
+
 
