@@ -13,7 +13,7 @@ LETTERS_GUESSED = ""
 LOSE_COUNT = 6
 
 
-def choose(difficulty):
+def choice(difficulty):
     """
     loop until the player has made too many failed tries
     will break loop if they succeed instead
@@ -26,9 +26,8 @@ def choose(difficulty):
     normal_word = random.choice(difficulty["normal"])
     hard_word = random.choice(difficulty["hard"])
     while not (
-        choose_difficulty == "easy"
-        or choose_difficulty == "normal"
-        or choose_difficulty == "hard"
+        choose_difficulty == "easy" or choose_difficulty == "normal" or
+        choose_difficulty == "hard"
     ):
 
         choose_difficulty = input(
@@ -37,7 +36,7 @@ def choose(difficulty):
     return [easy_word, normal_word, hard_word, choose_difficulty]
 
 
-def loses(normal_word, easy_word, hard_word, choose_difficulty):
+def varable_changed(normal_word, easy_word, hard_word, choose_difficulty):
     """
     a player gets to choose difficulty
     """
@@ -50,7 +49,7 @@ def loses(normal_word, easy_word, hard_word, choose_difficulty):
     return secret_word
 
 
-def guesses(secret_word, LETTERS_GUESSED):
+def suspicions(secret_word, LETTERS_GUESSED):
     """
     allows users to have a guess
     """
@@ -74,10 +73,10 @@ def guesses(secret_word, LETTERS_GUESSED):
         print("You have already guessed this letter, please try again.")
 
     # makes a list of all letters guessed
-    return win_guess(LETTERS_GUESSED, guess, secret_word)
+    return win_suspicions(LETTERS_GUESSED, guess, secret_word)
 
 
-def win_guess(LETTERS_GUESSED, guess, secret_word):
+def win_suspicions(LETTERS_GUESSED, guess, secret_word):
     """
     checking to see if the player has won that round
     """
@@ -101,18 +100,18 @@ def win_guess(LETTERS_GUESSED, guess, secret_word):
         print(f"The secret word was {secret_word}")
     else:
         print("There are still letters left. Please guess another letter")
-        return guesses(secret_word, LETTERS_GUESSED)
+        return suspicions(secret_word, LETTERS_GUESSED)
 
 
 def main():
     """
     run all programs functions
     """
-    easy_word, normal_word, hard_word, choose_difficulty = choose(difficulty)
-    secret_word = loses(
+    easy_word, normal_word, hard_word, choose_difficulty = choice(difficulty)
+    secret_word = varable_changed(
          normal_word, easy_word, hard_word, choose_difficulty
         )
-    guesses(secret_word, LETTERS_GUESSED)
+    suspicions(secret_word, LETTERS_GUESSED)
     return main()
 
 
